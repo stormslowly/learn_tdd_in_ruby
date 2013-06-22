@@ -4,6 +4,10 @@ class Competition
 	def initialize
 		
 	end
+
+  def start
+    close
+  end
 	
 	class Closed < StandardError
 	end

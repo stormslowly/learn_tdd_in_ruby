@@ -27,6 +27,8 @@ describe Competition do
     it "should be closed first " do 
       competition.should_receive(:close)
 
+      competition.start
+
     end
   end
 
