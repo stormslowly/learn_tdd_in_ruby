@@ -17,9 +17,10 @@ describe Competition do
   end
 
   context "questions has questions" do 
-    before{ competition.questions = ["question1"]}
+    before { competition.questions = ["question1"]}
+    subject {competition}
 
-    it {should_allow_team_to_enter}
+    it {should allow_team_to_enter}
 
   end 
 
