@@ -8,13 +8,10 @@ describe Competition do
 
   context "having no questions" do
     before { competition.questions =[] }
-  
-    it "doesn't accept any team" do 
-      
-      expect do
-        team.enter_competition(competition)
-      end.to raise_error Competition::Closed
-    end
+    subject { competition}  
+    
+    it {should_not allow_team_to_enter}
+
   end
 
   context "questions has questions" do 
