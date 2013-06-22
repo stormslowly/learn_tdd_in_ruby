@@ -1,6 +1,12 @@
-RSpec::Matchers.define :be_a_multiple_of  do |expected|
+RSpec::Matchers.define :allow_team_to_enter  do |expected|
   match do |actual|
-    actual % expected == 0
+    begin
+      Team.new("t").enter_competition(actual)
+      true    
+    rescue Competition::Closed
+      false      
+    end    
+
   end
 
   failure_message_for_should do |actual|

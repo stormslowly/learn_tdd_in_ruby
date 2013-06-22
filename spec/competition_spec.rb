@@ -1,4 +1,5 @@
 require_relative "../lib/Competition.rb"
+require_relative "support/matchers/team_support.rb"
 
 describe Competition do
 

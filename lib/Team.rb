@@ -12,7 +12,7 @@ class Team
 
 
   def enter_competition(competition)
-    raise Competition::Closed
+    raise Competition::Closed if competition.questions.empty?
   end
   
   def famous?
