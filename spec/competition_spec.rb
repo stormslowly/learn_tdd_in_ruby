@@ -23,5 +23,13 @@ describe Competition do
   end 
 
 
+  context "when start a Competition " do 
+    it "should be closed first " do 
+      competition.should_receive(:close)
+
+    end
+  end
+
+
 
 end
