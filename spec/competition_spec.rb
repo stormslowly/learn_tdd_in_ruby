@@ -7,7 +7,7 @@ describe Competition do
   let(:team) { Team.new("Ateam") }
 
   context "having no questions" do
-    before { competition.questions =[] }
+    before { competition.stub(:questions =>[]) }
     subject { competition}  
     
     it {should_not allow_team_to_enter}
