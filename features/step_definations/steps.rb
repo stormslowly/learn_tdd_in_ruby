@@ -6,15 +6,15 @@ Given /there is a team called / do
   @team = Team.new "name"
 end
 
-Given /I have a Competition without questions/ do
+Given /I have a Competition with( no)? questions/ do|no_questions|
   @competition = Competition.new
-  @competition.stub questions:[]
+  if no_questions
+    @competition.stub questions:[]
+  else
+    @competition.stub questions:[ stub ]
+  end
 end
 
-Given /I have a Competition questions/ do
-  @competition = Competition.new
-  @competition.stub questions:[ stub ]
-end
 
 
 When /a team enters the Competition/ do
