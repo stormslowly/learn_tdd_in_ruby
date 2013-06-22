@@ -15,7 +15,7 @@ describe Competition do
   end
 
   context "questions has questions" do 
-    before { competition.stub( :questions => ["question1"])}
+    before { competition.stub( :questions => [ stub ])}
     subject {competition}
 
     it {should allow_team_to_enter}
