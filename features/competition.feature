@@ -14,4 +14,4 @@ Feature: Competitions
   Scenario: Team enters a competition with questions
     Given I have a Competition with questions
     When  a team enters the Competition
-    Then  I should not ssee a error
+    Then  I should not see a error

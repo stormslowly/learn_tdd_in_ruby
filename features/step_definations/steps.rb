@@ -21,12 +21,14 @@ When /a team enters the Competition/ do
   @method = -> {@team.enter_competition @competition}
 end
 
-Then /I should see a error/ do
-  @method.should raise_error Competition::Closed
-end
 
-Then  /I should not ssee a error/ do 
-  @method.should_not raise_error 
+
+Then  /I should( not)? see a error/ do |dont_raise_error| 
+  if dont_raise_error 
+    @method.should_not raise_error 
+  else
+    @method.should raise_error Competition::Closed
+  end
 end
 
 
